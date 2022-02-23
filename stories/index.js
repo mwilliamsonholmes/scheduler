@@ -8,9 +8,10 @@ import "index.scss";
 import Button from "components/Button";
 
 import DayListItem from "components/DayListItem";
+import InterviewerListItem from "components/InterviewerListItem";
 
 import DayList from "components/DayList";
-import InterviewerListItem from "components/InterviewerListItem";
+
 
 storiesOf("Button", module)
   .addParameters({
