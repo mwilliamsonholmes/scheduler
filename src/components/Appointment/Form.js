@@ -14,6 +14,13 @@ export default function Form(props) {
     props.onCancel();
   }
 
+  const save = function () {
+    props.onSave(student, interviewer);
+  }
+
+  // const deleteAppointment = function() {
+  //   props.onDelete(id);
+  // }
 
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
@@ -39,7 +46,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={props.onSave}>Save</Button>
+          <Button confirm onClick={save}>Save</Button>
         </section>
       </section>
     </main>

@@ -10,15 +10,31 @@ export function getAppointmentsForDay(state, day) {
   return appointments;
 }
 
-export function getInterviewersForDay(state, day) {
-  const filteredDay = state.days.filter(days => days.name === day);
-  let appointments = [];
+// export function getInterviewersForDay(state, day) {
+//   const filteredDay = state.days.filter(days => days.name === day);
+//   let appointments = [];
 
-  if (filteredDay.length) {
-    appointments = filteredDay[0].appointments.map(spot => state.appointments[spot]);
+//   if (filteredDay.length) {
+//     appointments = filteredDay[0].appointments.map(spot => state.appointments[spot]);
+//   }
+//   return appointments;
+// }
+
+export function getInterviewersForDay(state, day) {
+  // match the day to the state
+  const appointmentsOfThatDay = state.days.filter(
+    (filteredDay) => filteredDay.name === day
+  )[0];
+
+  // using the array of appointments render the interviewers objects
+  const matchedInterviewers = [];
+  if (appointmentsOfThatDay) {
+    appointmentsOfThatDay.interviewers.map((interviewer) =>
+      matchedInterviewers.push(state.interviewers[interviewer])
+    );
   }
-  return appointments;
-}
+  return matchedInterviewers;
+};
 
 
 // function returns an object that contains the interview data if it is passed an object that contains an interviewer
