@@ -29,7 +29,7 @@ export default function useApplicationData() {
 
   const setDay = day => setState({ ...state, day });
 
-
+  //add a spot when apt is deleted
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
@@ -39,14 +39,36 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
-    // console.log("id", id);
+    const days = state.days.map((day) => {
+      const copy = { ...day };
+      if (copy.appointments.includes(id)) {
+        copy.spots++
+        return copy;
+      } else {
+        return copy;
+      }
+    })
+
     return axios.delete(`http://localhost:8001/api/appointments/${id}`)
       .then(() => {
-        setState({ ...state, appointments })
+        setState({ ...state, appointments, days })
       });
   }
 
+  //check if apt is being booked into an empty spot and then decrease the number of remaining open spots
   function bookInterview(id, interview) {
+    let days = state.days;
+    if (!state.appointments[id].interview) {
+      days = state.days.map((day) => {
+        const copy = { ...day };
+        if (copy.appointments.includes(id)) {
+          copy.spots--
+          return copy;
+        } else {
+          return copy;
+        }
+      })
+    }
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -57,7 +79,7 @@ export default function useApplicationData() {
     };
     return axios.put(`/api/appointments/${id}`, appointment)
       .then(() => {
-        setState({ ...state, appointments });
+        setState({ ...state, appointments, days });
       })
   }
   return { state, setDay, bookInterview, cancelInterview }
