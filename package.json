@@ -45,7 +45,8 @@
     "babel-loader": "^8.0.5",
     "cypress": "^9.5.1",
     "node-sass": "^4.14.0",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "react-test-renderer": "^16.14.0"
   },
   "jest": {
     "watchPathIgnorePatterns": [
