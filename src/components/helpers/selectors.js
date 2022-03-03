@@ -28,12 +28,15 @@ export function getInterviewersForDay(state, day) {
 
   // using the array of appointments render the interviewers objects
   const matchedInterviewers = [];
+  // console.log("APPOINTMENTS-OF-THAT-DAY", appointmentsOfThatDay);
   if (appointmentsOfThatDay) {
-    appointmentsOfThatDay.interviewers.map((interviewer) =>
+    appointmentsOfThatDay.appointments.map((interviewer) =>
       matchedInterviewers.push(state.interviewers[interviewer])
     );
   }
+  // console.log("MATCHED-INTERVIEWERS:", matchedInterviewers);
   return matchedInterviewers;
+
 };
 
 
