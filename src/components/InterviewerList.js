@@ -5,11 +5,9 @@ import PropTypes from 'prop-types';
 
 
 export default function InterviewerList(props) {
-  // console.log("props::::", props);
 
-// console.log("prop.sinterviewers", props.interviewers);
   const interviewers = props.interviewers.map((interviewer) => {
-    // console.log("INTERVIEWER", interviewer);
+    
     return (
       <InterviewerListItem
         key={interviewer.id}

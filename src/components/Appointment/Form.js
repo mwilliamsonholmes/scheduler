@@ -33,7 +33,6 @@ export default function Form(props) {
 
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
-  // console.log("PROPS!", props);
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">

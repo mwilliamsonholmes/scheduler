@@ -1,5 +1,4 @@
 
-
 export function getAppointmentsForDay(state, day) {
   const filteredDay = state.days.filter(days => days.name === day);
   let appointments = [];
@@ -18,16 +17,17 @@ export function getInterviewersForDay(state, day) {
   )[0];
   // using the array of appointments render the interviewers objects
   const matchedInterviewers = [];
-  console.log("app of that day==", appointmentsOfThatDay);
+  // console.log("app of that day==", appointmentsOfThatDay);
   if (appointmentsOfThatDay) {
     appointmentsOfThatDay.interviewers.map((interviewer) =>
       matchedInterviewers.push(state.interviewers[interviewer])
     );
   }
-  console.log("matchedInterviewers::", matchedInterviewers);
+  // console.log("matchedInterviewers::", matchedInterviewers);
   return matchedInterviewers;
-
 };
+
+
 
 // function returns an object that contains the interview data if it is passed an object that contains an interviewer
 export function getInterview(state, interview) {
