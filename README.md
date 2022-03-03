@@ -2,7 +2,7 @@
 Interview Scheduler is a React application that allows users to book and cancel interviews.
 
 ## Final Product
-Create a new appointment: ("https://github.com/mwilliamsonholmes/scheduler/blob/master/docs/form.png");
+!["Create a new appointment:"] (https://github.com/mwilliamsonholmes/scheduler/blob/master/docs/form.png);
 ## Setup
 
 Install dependencies with `npm install`.
