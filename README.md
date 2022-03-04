@@ -37,12 +37,12 @@ npm test
 npm run storybook
 ```
 ## Dependencies 
-axios
-classnames
-normalize.css
-react
-react-dom
-react-scripts
+*axios
+*classnames
+*normalize.css
+*react
+*react-dom
+*react-scripts
 
 ## Scheduler-API
 https://github.com/lighthouse-labs/scheduler-api
