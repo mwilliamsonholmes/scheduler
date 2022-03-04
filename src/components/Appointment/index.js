@@ -8,8 +8,7 @@ import Status from "./Status";
 import Confirm from "./Confirm";
 import Error from "./Error";
 import useVisualMode from "../../hooks/useVisualMode";
-// import { getInterviewersForDay } from "components/helpers/selectors";
-// import { action, withActions } from "@storybook/addon-actions";
+
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";

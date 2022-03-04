@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
 
-// import { checkPropTypes } from "prop-types";
 
 
 export default function Form(props) {
@@ -16,10 +15,6 @@ export default function Form(props) {
     reset();
     props.onCancel();
   }
-
-  // const save = function () {
-  //   props.onSave(student, interviewer);
-  // }
 
   const validate = () => {
     if (student === "") {
