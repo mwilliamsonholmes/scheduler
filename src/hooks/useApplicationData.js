@@ -49,7 +49,7 @@ export default function useApplicationData() {
       }
     })
 
-    return axios.delete(`http://localhost:8001/api/appointments/${id}`)
+    return axios.delete(`/api/appointments/${id}`)
       .then(() => {
         setState({ ...state, appointments, days })
       });
